@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+body {
+  background-color: #222;
+  color: #eee;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0 100px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  gap: 20px;
+}
+
+.card {
+  background-color: #333;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7),
+   inset -30px -30px 40px rgba(0, 0, 0, 0.3),
+   inset 10px 10px 40px rgba(255, 255, 255, 0.077);
+ 
+  width: 48%;
+  height: 600px;
+  overflow: 
+  hidden;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #f1f1f1;
+  font-size: 40px;
+  text-align: center;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-list li {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.skill-list span {
+  color: #ddd;
+  font-size: 32px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 25px;
+  background-color: #444;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 5px 0;
+  position: relative;
+  
+
+}
+
+.progress-fill {
+  margin-left: 3px;
+  border-radius: 6px;
+  height: 80%;
+  background-color: #28a745;
+  transition: width 0.4s ease-in-out;
+  transform: translateY(2px);
+  animation: fill 1s ease-in-out;
+}
+@keyframes fill {
+  0%{
+    width: 0;
+  }
+  100%{
+    width: var(width);
+  }
+}
+
+.progress-fill::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 0px;
+  height: 80%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  width: 50px;
+  opacity: 0.5;
+  animation: shine 1s infinite linear;
+}
+
+@keyframes shine {
+  0% { left: -50px; }
+  100% { left: 90%; }
+}
+
+.skill-percentage {
+  font-size: 16px;
+  color: #ccc;
+  margin-top: 5px;
+}
+
+.skill-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  flex-direction: column;
+  margin: 15px auto;
+  color: #fff;
+  position: relative;
+  border: 20px solid rgb(34, 34, 34);
+}
+
+circle {
+  fill: none;
+  position: absolute;
+  stroke-width: 20px;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 0;
+  stroke: #28a745;
+  height: 140px;
+  width: 140px;
+  animation: circle 1s linear;
+}
+
+@keyframes circle {
+  0% {
+    stroke-dashoffset: 301;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.item>svg {
+  transform: rotate(277deg);
+  position: absolute;
+  top: 44px;
+  left: 9px;
+  width: 140px;
+  overflow: visible;
+  height: 140px;
+}
+
+.item {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 30px;
+}
+
+.skill-circle span {
+  display: block;
+  font-size: 20px;
+  margin-top: 10px;
+  color: #fff;
+  position: absolute;
+  bottom: -50px;
+  width: 300px;
+  text-align: center;
+}
+
+.div-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.percentage {
+  font-size: 36px;
+  color: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  text-align: center;
+  line-height: 1.2;
+  background-color: transparent; /* Ensure background is transparent */
+}
+
+.skill-icon {
+  margin-right: 10px;
+  color: #28a745;
+  font-size: 32px;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="card">
+    <h2>Technical Skills</h2>
+    <ul class="skill-list">
+      <li>
+        <span><i class="fab fa-js skill-icon"></i>Javascript</span>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 86%;"></div>
+        </div>
+        <span class="skill-percentage">86%</span>
+      </li>
+      <li>
+        <span><i class="fab fa-java skill-icon"></i>Java</span>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 46%;"></div>
+        </div>
+        <span class="skill-percentage">46%</span>
+      </li>
+      <li>
+        <span><i class="fab fa-python skill-icon"></i>Python</span>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 38%;"></div>
+        </div>
+        <span class="skill-percentage">38%</span>
+      </li>
+      <li>
+        <span><i class="fab fa-php skill-icon"></i>PHP</span>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 17%;"></div>
+        </div>
+        <span class="skill-percentage">17%</span>
+      </li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2>Professional Skills</h2>
+    <div class="div-wrapper">
+      <div class="item">
+        <div class="skill-circle green">
+          <div class="percentage">86%</div>
+          <span>Communication</span>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+          <defs>
+            <linearGradient id="GradientColor">
+              <stop offset="0%" stop-color="#e91e63" />
+              <stop offset="100%" stop-color="#673ab7" />
+            </linearGradient>
+          </defs>
+          <circle cx="80" cy="80" r="80" stroke-linecap="round" />
+        </svg>
+      </div>
+      <div class="item">
+        <div class="skill-circle green">
+          <div class="percentage">86%</div>
+          <span>Project Management</span>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+          <defs>
+            <linearGradient id="GradientColor">
+              <stop offset="0%" stop-color="#e91e63" />
+              <stop offset="100%" stop-color="#673ab7" />
+            </linearGradient>
+          </defs>
+          <circle cx="80" cy="80" r="80" stroke-linecap="round" />
+        </svg>
+      </div>
+      <div class="item">
+        <div class="skill-circle green">
+          <div class="percentage">86%</div>
+          <span>Team Work</span>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+          <defs>
+            <linearGradient id="GradientColor">
+              <stop offset="0%" stop-color="#e91e63" />
+              <stop offset="100%" stop-color="#673ab7" />
+            </linearGradient>
+          </defs>
+          <circle cx="80" cy="80" r="80" stroke-linecap="round" />
+        </svg>
+      </div>
+      <div class="item">
+        <div class="skill-circle green">
+          <div class="percentage">86%</div>
+          <span>Creativity</span>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+          <defs>
+            <linearGradient id="GradientColor">
+              <stop offset="0%" stop-color="#e91e63" />
+              <stop offset="100%" stop-color="#673ab7" />
+            </linearGradient>
+          </defs>
+          <circle cx="80" cy="80" r="80" stroke-linecap="round" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="test"></div>
+</body>
+</html>
